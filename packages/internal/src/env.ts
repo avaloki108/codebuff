@@ -11,6 +11,8 @@ const envSchema = {
     // Backend variables
     CODEBUFF_API_KEY: z.string().optional(),
     OPEN_ROUTER_API_KEY: z.string().min(1),
+    OLLAMA_BASE_URL: z.string().url().optional().default('http://localhost:11434/v1'),
+    OLLAMA_API_KEY: z.string().optional().default('ollama'),
     RELACE_API_KEY: z.string().min(1),
     LINKUP_API_KEY: z.string().min(1),
     GOOGLE_CLOUD_PROJECT_ID: z.string().min(1),
@@ -52,6 +54,8 @@ const envSchema = {
     // Backend variables
     CODEBUFF_API_KEY: process.env.CODEBUFF_API_KEY,
     OPEN_ROUTER_API_KEY: process.env.OPEN_ROUTER_API_KEY,
+    OLLAMA_BASE_URL: process.env.OLLAMA_BASE_URL,
+    OLLAMA_API_KEY: process.env.OLLAMA_API_KEY,
     RELACE_API_KEY: process.env.RELACE_API_KEY,
     LINKUP_API_KEY: process.env.LINKUP_API_KEY,
     GOOGLE_CLOUD_PROJECT_ID: process.env.GOOGLE_CLOUD_PROJECT_ID,

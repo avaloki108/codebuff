@@ -220,6 +220,11 @@ export const deepseekModels = {
 } as const
 export type DeepseekModel = (typeof deepseekModels)[keyof typeof deepseekModels]
 
+export const ollamaModels = {
+  gptOss20b: 'gpt-oss:20b',
+} as const
+export type OllamaModel = (typeof ollamaModels)[keyof typeof ollamaModels]
+
 // Vertex uses "endpoint IDs" for finetuned models, which are just integers
 export const finetunedVertexModels = {
   ft_filepicker_003: '196166068534771712',
@@ -252,6 +257,7 @@ export const models = {
   ...openaiModels,
   ...geminiModels,
   ...deepseekModels,
+  ...ollamaModels,
   ...openrouterModels,
   ...finetunedVertexModels,
 } as const

@@ -57,6 +57,8 @@ const TOKENS_COST_PER_M = {
     [models.openrouter_o3_mini]: 1.1,
     [models.openrouter_gemini2_5_pro_preview]: 1.25,
     [models.openrouter_grok_4]: 3.0,
+    // Ollama models (free/self-hosted)
+    [models.gptOss20b]: 0,
   },
   output: {
     // [models.opus4]: 75,
@@ -87,6 +89,8 @@ const TOKENS_COST_PER_M = {
     [models.openrouter_o3_mini]: 4.4,
     [models.openrouter_gemini2_5_pro_preview]: 10,
     [models.openrouter_grok_4]: 15.0,
+    // Ollama models (free/self-hosted)
+    [models.gptOss20b]: 0,
   },
   cache_creation: {
     // [models.opus4]: 18.75,
@@ -112,6 +116,8 @@ const TOKENS_COST_PER_M = {
     [models.gemini2_5_flash_thinking]: 0.2625,
     [models.ft_filepicker_003]: 0.025,
     [models.ft_filepicker_005]: 0.025,
+    // Ollama models (free/self-hosted)
+    [models.gptOss20b]: 0,
   },
 }
 

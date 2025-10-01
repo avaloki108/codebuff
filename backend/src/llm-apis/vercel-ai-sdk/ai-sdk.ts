@@ -3,6 +3,7 @@ import { openai } from '@ai-sdk/openai'
 import {
   finetunedVertexModels,
   geminiModels,
+  ollamaModels,
   openaiModels,
 } from '@codebuff/common/old-constants'
 import { buildArray } from '@codebuff/common/util/array'
@@ -17,11 +18,13 @@ import { checkLiveUserInput, getLiveUserInputIds } from '../../live-user-inputs'
 import { logger } from '../../util/logger'
 import { saveMessage } from '../message-cost-tracker'
 import { openRouterLanguageModel } from '../openrouter'
+import { ollama } from './ollama'
 import { vertexFinetuned } from './vertex-finetuned'
 
 import type {
   GeminiModel,
   Model,
+  OllamaModel,
   OpenAIModel,
 } from '@codebuff/common/old-constants'
 import type { Message } from '@codebuff/common/types/messages/codebuff-message'
@@ -54,6 +57,9 @@ const modelToAiSDKModel = (model: Model): LanguageModel => {
   }
   if (Object.values(geminiModels).includes(model as GeminiModel)) {
     return google.languageModel(model)
+  }
+  if (Object.values(ollamaModels).includes(model as OllamaModel)) {
+    return ollama.languageModel(model)
   }
   if (model === openaiModels.o3pro || model === openaiModels.o3) {
     return openai.responses(model)
